@@ -1,0 +1,68 @@
+@import "../../main-style";
+.entry-card-container {
+  position: relative;
+  background: $grayish;
+  border-radius: 5px;
+
+  box-shadow: 0px 2px 15px 2px rgba(#212F3C, 0.068);
+  transition: box-shadow 0.2s, ease-out;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 4px rgba(#212F3C, 0.068);
+
+    .x-button {
+      transition-delay: 0.25s;
+      opacity: 1;
+    }
+
+    .ec-body {
+      position: relative;
+      max-height: 100px; //maximum Höhe
+      overflow: hidden;
+
+      .fade-out-truncation {
+        position: absolute;
+        pointer-events: none;
+        bottom: 0;
+        height: 50px;
+        width: 100%;
+        background: linear-gradient(to bottom, rgba($black, 0) 0%, rgba($black, 0.8) 50%, black 100%);
+      }
+    }
+  }
+
+  .entry-card-content{
+    padding: 25px;
+
+    .ec-title {
+      font-size: 22px;
+      font-weight: bold;
+      color: $blue;
+    }
+  }
+}
+
+.x-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  height: 24px;
+  width: 24px;
+  background-color: lighten($CRUDColor, 20%);
+  background-image: url('../../assets/delete_icon.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+
+  transition: opacity 0.2s ease-out;
+  opacity: 0;
+
+  &:hover {
+    background-color: lighten($CRUDColor, 50%);
+  }
+
+  &:active {
+    background-color: lighten($CRUDColor, 30%);
+  }
+}
