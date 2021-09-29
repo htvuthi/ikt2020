@@ -1,9 +1,9 @@
 {
-  "name": "frontend",
+  "name": "noteapp",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve , http-server -c-1",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -17,8 +17,11 @@
     "@angular/forms": "~12.2.0",
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
+    "@angular/pwa": "^12.2.7",
     "@angular/router": "~12.2.0",
+    "angular": "^1.8.2",
     "bulma": "^0.9.3",
+    "pwa-asset-generator": "^4.3.9",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

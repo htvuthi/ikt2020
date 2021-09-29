@@ -1,3 +1,4 @@
+<head><link rel="manifest" href="../../../manifest.json"></head>
 <div class="form-container">
 
   <form #entryForm="ngForm" (ngSubmit)="onSubmit(entryForm)">
@@ -17,7 +18,7 @@
 
     <div class="field is-grouped is-pulled-right">
       <div class="control">
-        <button class="button is-success" type="submit" [disabled]="!entryForm.valid">Save</button>
+        <button class="button is-success" type="submit" routerLink="/" [disabled]="!entryForm.valid">Save</button>
       </div>
     </div>
 

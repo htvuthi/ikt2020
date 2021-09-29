@@ -18,7 +18,7 @@ const getEntries = (request, response) => {
 const getEntry = (request, response) => {
     const id = parseInt(request.params.id)
 
-    pool.query('SELECT * FROM users WHERE id = $1', [id], (error, results) => {
+    pool.query('SELECT * FROM entries WHERE id = $1', [id], (error, results) => {
         if (error) {
             throw error
         }
@@ -31,7 +31,7 @@ const createEntry = (request, response) => {
     console.log(request.body)
     const { title, text, location } = request.body
 
-    pool.query('INSERT INTO users (title, text, location) VALUES ($1, $2)', [title, text, location], (error, results) => {
+    pool.query('INSERT INTO entries (title, text, location) VALUES ($1, $2, $3)', [title, text, location], (error, results) => {
         if (error) {
             throw error
         }
@@ -41,11 +41,11 @@ const createEntry = (request, response) => {
 
 const updateEntry = (request, response) => {
     const id = parseInt(request.params.id)
-    const { name, email } = request.body
+    const { title, text } = request.body
 
     pool.query(
         'UPDATE entries SET title = $1, text = $2 WHERE id = $3',
-        [name, email, id],
+        [title, text, location],
         (error, results) => {
             if (error) {
                 throw error
