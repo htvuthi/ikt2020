@@ -22,7 +22,7 @@ CREATE ROLE chef WITH LOGIN PASSWORD 'pw';
 ALTER ROLE chef CREATEDB;
 \q
 
-##Einloggen in die neue Rolle
+## Einloggen in die neue Rolle
 psql -d postgres -U chef
 
 ## Erstellen der Datenbank
