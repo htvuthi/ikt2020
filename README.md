@@ -17,13 +17,21 @@ brew services start postgresql
 
 psql postgres
 
+## Erstellen einer Rolle 
+CREATE ROLE chef WITH LOGIN PASSWORD 'pw';
+ALTER ROLE chef CREATEDB;
+\q
+
+##Einloggen in die neue Rolle
+psql -d postgres -U chef
+
 ## Erstellen der Datenbank
 
-CREATE DATABASE db;
+CREATE DATABASE datas;
 
-## Verbindung zur Datenbank journals
+## Verbindung zur Datenbank 
 
-\c db
+\c datas
 
 ## Erstellen der Tabelle
 
